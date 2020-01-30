@@ -15,16 +15,14 @@ namespace street
             for (;;)
             {
                 Thread.Sleep(500);
-                if (TheDelegate != null)
+                if (TheDelegate == null) continue;
+                foreach (var @delegate
+                    in TheDelegate.GetInvocationList())
                 {
-                    foreach (var @delegate
-                        in TheDelegate.GetInvocationList())
-                    {
-                        var del = (DelegateThatReturnsInt) @delegate;
-                        del.BeginInvoke(
-                            ResultsReturned,
-                            del);
-                    }
+                    var del = (DelegateThatReturnsInt) @delegate;
+                    del.BeginInvoke(
+                        ResultsReturned,
+                        del);
                 }
             }
 
