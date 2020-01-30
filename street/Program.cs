@@ -31,9 +31,9 @@ namespace street
 
         private static void ResultsReturned(IAsyncResult iar)
         {
-            DelegateThatReturnsInt del =
+            var del =
                 (DelegateThatReturnsInt) iar.AsyncState;
-            int result = del.EndInvoke(iar);
+            var result = del.EndInvoke(iar);
             Console.WriteLine("デリゲートの実行結果:{0}", result);
         }
     }
