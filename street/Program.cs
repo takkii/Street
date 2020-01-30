@@ -75,7 +75,7 @@ namespace street
         }
     }
 
-    public class Himekuri
+    public class Street
     {
         public static void Main()
         {
