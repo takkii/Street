@@ -79,13 +79,13 @@ namespace street
         {
             try
             {
-                ClassWithDelegate theClassWithDelegate =
+                var theClassWithDelegate =
                     new ClassWithDelegate();
 
-                FirstSubscriber fs = new FirstSubscriber();
+                var fs = new FirstSubscriber();
                 fs.Subscribe(theClassWithDelegate);
 
-                SecondSubscriber ss = new SecondSubscriber();
+                var ss = new SecondSubscriber();
                 ss.SubScribe(theClassWithDelegate);
 
                 theClassWithDelegate.Run();
